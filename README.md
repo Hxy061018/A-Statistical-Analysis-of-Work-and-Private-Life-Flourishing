@@ -107,7 +107,6 @@ python src/visualization.py
 
 如有任何问题或建议，欢迎通过以下方式联系：
 
-- GitHub Issues：[填写您的项目issue页面链接]
-- Email：[填写您的邮箱]
+- Email：[2024112589@hit.stu.edu.cn]
 
 **最后更新**：2026-04-21
