@@ -1,58 +1,73 @@
-# 工作与私人生活繁荣的统计分析
+解码心理健康：工作与私人生活繁荣度的统计分析
 
-## 📋 项目简介
+(Decoding Mental Health: A Statistical Analysis of Work and Private Life Flourishing)
 
-本项目通过多元统计分析方法，探索工作与私人生活之间的关系，分析它们对个人生活幸福指数和成功的影响。该研究基于大规模数据集，运用多种统计学和数据挖掘技术来揭示工作与生活平衡的规律。
+📋 项目简介
 
-## 🎯 研究目标
+本项目基于一份包含多维心理测量尺度的问卷数据集，通过严格的数据清洗与特征工程，运用多元统计分析方法（PCA、FCA、MCA、LDA及聚类分析），深入探究了工作与私人生活场景下的心理健康状态。研究旨在揭示情绪健康、社会福祉与心理福祉的结构特征，并识别不同人口统计学群体在心理繁荣度上的分化规律，为企业员工关怀与科学的心理健康评估提供数据驱动的实证依据。
 
-- 分析工作投入与私人生活质量的关联性
-- 探索影响生活繁荣度的关键因素
-- 提供基于数据的生活平衡建议
-- 验证不同职业和生活方式对整体幸福感的影响
+🎯 研究目标
 
-## 📊 数据集
+验证心理健康三维框架（情绪、社会、心理福祉）在职场与私人场景下的稳健性。
 
-- **数据来源**：[数据来源描述]
-- **样本规模**：[样本数量]
-- **数据周期**：[时间范围]
-- **关键变量**：工作时长、收入、家庭时间、健康指数、生活满意度等
+探索工作繁荣度、私人生活繁荣度与情绪状态之间的深层映射关系。
 
-## 🔧 技术栈
+降维并识别不同人口统计学特征（如年龄、婚姻、学历、企业规模）下的典型心理繁荣度群体画像。
 
-- **编程语言**：Python
-- **数据分析库**：Pandas, NumPy, SciPy
-- **可视化工具**：Matplotlib, Seaborn, Plotly
-- **统计方法**：相关分析、回归分析、聚类分析、时间序列分析
-- **其他工具**：[其他使用的工具]
+评估核心心理因子在区分个体情绪状态与家庭客观状况方面的判别效力。
 
-## 📁 项目结构
+📊 数据集
 
-```
+数据来源：调查问卷原始数据 (Flourishing_N317_v2.csv)
+
+样本规模：原始样本 317 份，经过严格的缺失值清理（50%有效性阈值）与 KNN 填补后，最终保留 234 份 有效高质量样本。
+
+关键变量：
+
+人口统计学：年龄 (AGE)、性别 (SEX)、家庭状况 (SITUFAM)、学历 (NIVEAUETUDE)、企业规模 (TAILLE) 等。
+
+心理健康量表 (MHC-SF)：工作环境心理健康 (MHCB)、私人环境心理健康 (MHCC)。
+
+情绪量表：积极情绪 (PE) 与消极情绪 (NE)，并由此衍生情绪状态分类 (Positivity Ratio)。
+
+性格优势：性格优势特征 (Force) 及使用频率 (FQ)。
+
+心流状态：心流与工作表现 (Flux)。
+
+🔧 技术栈
+
+编程语言：Python
+
+数据处理与科学计算：Pandas, NumPy, SciPy
+
+机器学习与统计分析：Scikit-learn (KNNImputer, PCA, KMeans, LinearDiscriminantAnalysis), fanalysis (MCA)
+
+数据可视化：Matplotlib, Seaborn
+
+核心算法：主成分分析 (PCA)、因子对应分析 (FCA)、多重对应分析 (MCA)、线性判别分析 (LDA)、K-Means 聚类
+
+📁 项目结构
+
 A-Statistical-Analysis-of-Work-and-Private-Life-Flourishing/
 ├── data/                 # 数据文件夹
-│   ├── raw/             # 原始数据
-│   └── processed/       # 处理后的数据
-��── notebooks/           # Jupyter笔记本
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_data_cleaning.ipynb
-│   └── 03_analysis.ipynb
-├── src/                 # 源代码
-│   ├── data_processing.py
-│   ├── analysis.py
-│   └── visualization.py
-├── results/             # 分析结果和图表
-├── README.md           # 项目说明文档
-└── requirements.txt    # 项目依赖
-```
+│   ├── raw/              # 原始问卷数据 (Flourishing_N317_v2.csv)
+│   └── processed/        # 清洗与特征工程后的数据
+├── notebooks/            # Jupyter笔记本 (探索性分析)
+├── src/                  # 源代码
+│   ├── data_processing.py # 缺失值处理、KNN填补、特征衍生(动态比例阈值法)
+│   ├── analysis.py        # PCA降维、FCA/MCA对应分析、LDA判别分析
+│   └── visualization.py   # 热力图、碎石图、散点图及混淆矩阵绘制
+├── results/              # 分析结果和可视化图表输出
+├── README.md             # 项目说明文档
+└── requirements.txt      # 项目依赖
 
-## 🚀 快速开始
 
-### 环境配置
+🚀 快速开始
 
-```bash
+环境配置
+
 # 克隆项目
-git clone https://github.com/Hxy061018/A-Statistical-Analysis-of-Work-and-Private-Life-Flourishing.git
+git clone [https://github.com/Hxy061018/A-Statistical-Analysis-of-Work-and-Private-Life-Flourishing.git](https://github.com/Hxy061018/A-Statistical-Analysis-of-Work-and-Private-Life-Flourishing.git)
 cd A-Statistical-Analysis-of-Work-and-Private-Life-Flourishing
 
 # 创建虚拟环境
@@ -63,67 +78,56 @@ venv\Scripts\activate  # Windows
 
 # 安装依赖
 pip install -r requirements.txt
-```
 
-### 运行分析
 
-```bash
-# 运行数据处理
+运行分析
+
+# 1. 运行数据清洗与预处理
 python src/data_processing.py
 
-# 运行分析
+# 2. 运行统计分析模型 (PCA, FCA, MCA, LDA)
 python src/analysis.py
 
-# 生成可视化结果
+# 3. 生成可视化结果
 python src/visualization.py
-```
-
-## 📈 主要发现
-- 工作时长与生活满意度呈现非线性关系
-- 私人生活投入对整体幸福感的影响显著
-- 不同职业类别的工作-生活平衡差异明显
-
-## 📝 关键指标
-
-| 指标 | 描述 
-|------|------|
-| 工作-生活平衡指数 | 衡量工作与生活协调程度 |
-| 生活繁荣度 | 综合反映个人生活质量 |
-| 幸福指数 | 主观生活满意度评分 |
-
-## 🔍 统计方法
-
-- **描述性统计**：均值、标准差、分布分析
-- **推断统计**：假设检验、置信区间
-- **相关分析**：Pearson相关、Spearman秩相关
-- **回归分析**：线性回归、多元回归
-- **聚类分析**：K-means、层次聚类
 
 
+📈 主要发现
 
-## 📄 许可证
+心理健康结构的稳健性：PCA 提取的维度与经典的心理健康三维模型高度吻合，明确区分了“职业积极功能因子”与“职业积极情绪因子”。
 
-本项目采用 [选择许可证，如MIT, Apache 2.0等] 许可证
+工作与生活的镜像一致性：FCA 表明工作繁荣度与私人生活繁荣度具有极显著的跨领域镜像关联，两者均与积极情绪健康直接挂钩。
 
-## 📞 联系方式
+群体画像显著分化：MCA 与 K-Means 聚类识别出三大典型群体：
+
+高抑郁风险群（离异/高知/女性主导）。
+
+适度繁荣的稳定职场群（中青年/已婚/育儿期）。
+
+全面繁荣的成熟优势群（小微企业/年长员工）。
+
+心理状态与外部标签解耦：LDA 模型能以 88.98% 的高准确率通过心理因子预测情绪状态，但在预测家庭客观状况时失效，证实了个体主观心理特质与客观人口标签存在解耦现象。
+
+👥 贡献者 (哈尔滨工业大学 管理学院)
+
+Haoran Cheng: 主成分分析 
+
+Chenting Lin: 判别分析 
+
+Xiaoyu Hu: 数据清理与特征工程 
+
+Haoyu Yang: 因子对应分析 
+
+Jingyi Hou: 多重对应分析与聚类 
+
+📄 许可证
+
+本项目采用 MIT 许可证。
+
+📞 联系方式
 
 如有任何问题或建议，欢迎通过以下方式联系：
-- GitHub Issues：[项目issue页面]
-- Email：[你的邮箱]
 
-## 🙏 致谢
+Email:2024112589@hit.stu.edu.com
 
-感谢所有为此项目做出贡献的人员和数据提供者。
-
----
-
-**最后更新**：2026-04-21
-```
-
-现在请把这个内容复制到你的README中。你可以根据实际情况修改以下部分：
-- 📊 **数据集** - 添加具体的数据来源和样本信息
-- 🔧 **技术栈** - 补充你实际使用的工具
-- 📈 **主要发现** - 添加你的研究成果
-- 👥 **贡献者** 和 📞 **联系方式** - 填入个人信息
-
-需要我帮你更新到仓库中吗？
+最后更新：2026-04-21
